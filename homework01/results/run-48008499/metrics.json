@@ -1,0 +1,19 @@
+{
+  "records": 2020,
+  "configurations": 101,
+  "repeats": 20,
+  "job_id": "48008499",
+  "hostname": "n0135.talapas.uoregon.edu",
+  "largest_n": 100000000,
+  "lock_n": 1000000,
+  "max_threads": 32,
+  "reduction_speedup": 31.4210128590908,
+  "reduction_vs_serial_speedup": 14.118625304440377,
+  "mc_speedup": 31.36958635815641,
+  "serial_error_small": 3.4443483798440866e-07,
+  "serial_error_large": 1.0476064460362977e-12,
+  "mc_rmse_small": 0.01898231511510508,
+  "mc_rmse_large": 0.00019656308872172587,
+  "critical_slowdown": 16.902351984361815,
+  "atomic_slowdown": 42.157979421770214
+}
