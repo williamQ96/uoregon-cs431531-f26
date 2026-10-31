@@ -1,0 +1,5 @@
+* text=auto eol=lf
+*.pdf binary
+*.png binary
+# Preserve the scheduler's padded columns in verbatim accounting evidence.
+results/**/accounting.txt -whitespace

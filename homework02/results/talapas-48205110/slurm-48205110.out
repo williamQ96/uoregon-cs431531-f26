@@ -1,0 +1,8 @@
+/usr/bin/gcc
+/usr/bin/g++
+make: Nothing to be done for 'all'.
+PASS 1580 input/thread cases, all 3 algorithms; null/empty, zero, ones, signed random, large signed values, non-powers of two
+Completed n=65536
+Completed n=1048576
+Completed n=16777216
+Completed n=33554432

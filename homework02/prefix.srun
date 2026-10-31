@@ -1,0 +1,67 @@
+#!/bin/bash -l
+# Submit from the project root with --account=cis431_531 and a verified partition.
+#SBATCH --account=cis431_531
+#SBATCH --job-name=hw02-prefix
+#SBATCH --partition=compute
+#SBATCH --nodes=1
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=32
+#SBATCH --mem=4G
+#SBATCH --time=00:20:00
+#SBATCH --output=slurm-%j.out
+#SBATCH --error=slurm-%j.err
+
+set -euo pipefail
+: "${SLURM_JOB_ID:?Submit through sbatch rather than running on a login node}"
+cd -- "$SLURM_SUBMIT_DIR"
+mkdir -p "results/talapas-$SLURM_JOB_ID"
+result_dir="results/talapas-$SLURM_JOB_ID"
+
+# Replace/add a module load below only after checking module spider gcc.
+command -v gcc
+command -v g++
+export OMP_DYNAMIC=false
+export OMP_PLACES=cores
+export OMP_PROC_BIND=close
+export OMP_NUM_THREADS="$SLURM_CPUS_PER_TASK"
+
+{
+    date -u +'%Y-%m-%dT%H:%M:%SZ'
+    hostname
+    uname -sr
+    lscpu
+    gcc --version
+    g++ --version
+    module list 2>&1 || true
+    printf 'job=%s cpus=%s binding=%s places=%s\n' "$SLURM_JOB_ID" "$SLURM_CPUS_PER_TASK" "$OMP_PROC_BIND" "$OMP_PLACES"
+    scontrol show job "$SLURM_JOB_ID"
+    git rev-parse HEAD 2>/dev/null || true
+    sha256sum prefix.c prefix.h common.c common.h bench/benchmark.cpp Makefile
+} > "$result_dir/environment.txt"
+
+make all 2>&1 | tee "$result_dir/build.txt"
+test_threads="$SLURM_CPUS_PER_TASK"
+if (( test_threads > 8 )); then test_threads=8; fi
+srun --ntasks=1 --cpu-bind=cores ./benchmark --test --max-threads "$test_threads" | tee "$result_dir/correctness.txt"
+counts=1
+for threads in 2 4 8 16 32 64 128; do
+    if (( threads <= SLURM_CPUS_PER_TASK )); then counts+=",$threads"; fi
+done
+srun --ntasks=1 --cpu-bind=cores ./benchmark --benchmark \
+    --sizes 65536,1048576,16777216,33554432 --threads "$counts" --repeats 7 \
+    --csv "$result_dir/raw.csv" 2>&1 | tee "$result_dir/benchmark.txt"
+
+python3 - "$result_dir" "$counts" <<'PYMETA'
+import json, os, platform, subprocess, sys
+from pathlib import Path
+cpu=next((line.split(':',1)[1].strip() for line in subprocess.check_output(['lscpu'],text=True).splitlines() if line.startswith('Model name:')), platform.machine())
+metadata={
+ 'platform':'Talapas, Slurm job '+os.environ['SLURM_JOB_ID']+' on '+platform.node(),
+ 'platform_short':'Talapas', 'cpu':cpu,
+ 'compiler':'GCC '+subprocess.check_output(['gcc','-dumpfullversion'],text=True).strip(),
+ 'sizes':[65536,1048576,16777216,33554432], 'repeats':7, 'threads':[int(p) for p in sys.argv[2].split(',')],
+ 'talapas_verified':True,
+ 'status_note':'Measured on the compute node inside the recorded Slurm allocation.'
+}
+(Path(sys.argv[1])/'metadata.json').write_text(json.dumps(metadata,indent=2)+'\n')
+PYMETA

@@ -1,0 +1,14 @@
+{
+  "job_id": "48205110",
+  "remote_workdir": "/home/williamq/cis431_531/homework02",
+  "receipt": "48205110",
+  "source_revision": "60eb7fb",
+  "requested_cpus": 64,
+  "memory": "4G",
+  "time_limit": "00:20:00",
+  "sbatch_overrides": [
+    "--cpus-per-task=64"
+  ],
+  "replaces_pending_job": "48205088",
+  "reason": "128-CPU job was predicted to wait until 12:27 PDT; it was canceled before execution."
+}

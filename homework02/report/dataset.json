@@ -1,0 +1,30 @@
+{
+  "source_csv": "C:\\Users\\izayo\\OneDrive\\Documents\\local\\uoregon-cs431531-f26\\homework02\\results\\talapas-48205110\\raw.csv",
+  "metadata": {
+    "platform": "Talapas, Slurm job 48205110 on n0187.talapas.uoregon.edu",
+    "platform_short": "Talapas",
+    "cpu": "AMD EPYC 7713 64-Core Processor",
+    "compiler": "GCC 8.5.0",
+    "sizes": [
+      65536,
+      1048576,
+      16777216,
+      33554432
+    ],
+    "repeats": 7,
+    "threads": [
+      1,
+      2,
+      4,
+      8,
+      16,
+      32,
+      64
+    ],
+    "talapas_verified": true,
+    "status_note": "Measured on the compute node inside the recorded Slurm allocation. Allocation: 64 CPUs and 4 GiB RAM.",
+    "allocated_cpus": 64
+  },
+  "configurations": 60,
+  "samples": 420
+}

@@ -1,0 +1,12 @@
+{
+  "source_revision": "60eb7fbc1f8b5576a2082d8cbf9287b3b0ca6a48",
+  "files": {
+    "prefix.c": "2d16d48095a9eb08dae6b0153afa0094275948eefa7a5ef32a407fa2e169f8a6",
+    "prefix.h": "b968fea8ce821f02e948d494e8922eede0e1c9c5e36119cdf651dab521aea03c",
+    "common.c": "c090ecdc871d48e614ae86f7a1eb79e87affbc16f5eea402ecdff863e5c12e15",
+    "common.h": "93c5a8a119bc5312bd2414b8fe0075c2463df9570545762c33eb9e208822201b",
+    "bench/benchmark.cpp": "3c0f7ccfd4489c68d3b30e907ab5a5831ea28ac74e3d61754b4cadeb9eaf0cab",
+    "Makefile": "eb3d22f8b781177cf96e400be11cfee3d806391b2a9904a8a1b36ba95989cd6f"
+  },
+  "hashes_verified_against_local_sources": true
+}

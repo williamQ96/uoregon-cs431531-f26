@@ -1,0 +1,9 @@
+{
+  "job_id": "48205061",
+  "remote_workdir": "/home/williamq/cis431_531/homework02",
+  "receipt": "48205061",
+  "source_revision": "f8b40c6",
+  "requested_cpus": 32,
+  "memory": "4G",
+  "time_limit": "00:20:00"
+}

@@ -1,0 +1,38 @@
+{
+  "date": "2026-10-30",
+  "endpoint": "login.talapas.uoregon.edu",
+  "port": 22,
+  "windows_tcp_result": "reachable after UO VPN connected",
+  "wsl_tcp_result": "timeout",
+  "ssh_authenticated": true,
+  "password_authentication_attempted": true,
+  "talapas_jobs_submitted": 3,
+  "user_direction": "User enabled UO VPN and updated credentials; current authentication rejection requires resolution before retry.",
+  "pirg": "cis431_531",
+  "planned_remote_workdir": "/home/williamq/cis431_531/homework02",
+  "host_key_verified": true,
+  "latest_result": "Prompt-aware keyboard-interactive password + one Duo Push selection successfully authenticated the working session.",
+  "server_authentication_methods": [
+    "publickey",
+    "gssapi-keyex",
+    "gssapi-with-mic",
+    "password",
+    "keyboard-interactive"
+  ],
+  "diagnostic_checks": {
+    "username_matches_user_supplied_home": true,
+    "password_nonempty": true,
+    "password_has_outer_whitespace": false
+  },
+  "manual_login_reported_by_user": true,
+  "manual_login_authentication_flow": "Keyboard-interactive password, then Duo menu option 1 and phone approval",
+  "programmatic_interactive_retry": "Password challenge was rejected before the Duo menu; no new Duo choice was submitted",
+  "completed_jobs": [
+    "48205061",
+    "48205110"
+  ],
+  "canceled_before_execution": [
+    "48205088"
+  ],
+  "working_session_reused": true
+}

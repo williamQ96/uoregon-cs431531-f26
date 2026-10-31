@@ -1,0 +1,20 @@
+\newcommand{\ExperimentPlatform}{Talapas, Slurm job 48205110 on n0187}
+\newcommand{\ExperimentCPU}{AMD EPYC 7713 64-Core Processor}
+\newcommand{\ExperimentCompiler}{GCC 8.5.0}
+\newcommand{\RunStatus}{Measured on the compute node inside the recorded Slurm allocation. Allocation: 64 CPUs and 4 GiB RAM.}
+\newcommand{\MaxSize}{33,554,432}
+\newcommand{\TrialCount}{7}
+\newcommand{\ConfigurationCount}{60}
+\newcommand{\MeasurementCount}{420}
+\newcommand{\ThreadCounts}{1, 2, 4, 8, 16, 32, 64}
+\newcommand{\SerialTime}{15.61}
+\newcommand{\TreeTime}{18.34}
+\newcommand{\TreeSpeedup}{0.85}
+\newcommand{\TreeThreads}{64}
+\newcommand{\DoublingTime}{98.12}
+\newcommand{\DoublingSpeedup}{0.16}
+\newcommand{\DoublingThreads}{64}
+\newcommand{\ProblemSizes}{2^{16}, 2^{20}, 2^{24}, 2^{25}}
+\newcommand{\HighThreadFinding}{At 64 threads, tree and doubling speedups were 0.85 and 0.16, respectively.}
+\newcommand{\FindingSummary}{Neither parallel method's median time beat serial at any tested input size. Lower total work alone did not guarantee proportional thread scaling.}
+\newcommand{\MachineLimit}{The node has 128 physical cores across two sockets and eight NUMA domains. The shared first-touch policy and core binding can affect serial/parallel ratios; this experiment does not isolate placement effects or characterize other nodes.}

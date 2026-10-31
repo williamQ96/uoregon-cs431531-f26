@@ -1,0 +1,11 @@
+Job ID: 48205110
+Cluster: talapas
+User/Group: williamq/uoregon
+State: COMPLETED (exit code 0)
+Nodes: 1
+Cores per node: 64
+CPU Utilized: 00:05:28
+CPU Efficiency: 11.39% of 00:48:00 core-walltime
+Job Wall-clock time: 00:00:45
+Memory Utilized: 526.54 MB
+Memory Efficiency: 12.85% of 4.00 GB (4.00 GB/node)

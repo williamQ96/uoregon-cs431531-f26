@@ -1,0 +1,16 @@
+{
+  "upstream_repository": "https://github.com/UOCS431531/uoregon-cs431531-f26-assignments",
+  "upstream_commit": "e76fd075b1faed5206b99c8510c9a7ca639c6ebe",
+  "base_user_repository_commit": "d1d9452",
+  "measurement_source_note": "Source was uncommitted at measurement time; SHA-256 values in environment.txt identify the exact compiled source.",
+  "files": {
+    "prefix.c": "428aefe2ac9981c9ede9cf9cc8a4d2b70eccd4ecf3d1c8437a2800b6ad527dec",
+    "prefix.h": "b968fea8ce821f02e948d494e8922eede0e1c9c5e36119cdf651dab521aea03c",
+    "common.c": "c090ecdc871d48e614ae86f7a1eb79e87affbc16f5eea402ecdff863e5c12e15",
+    "common.h": "93c5a8a119bc5312bd2414b8fe0075c2463df9570545762c33eb9e208822201b",
+    "bench/benchmark.cpp": "3c0f7ccfd4489c68d3b30e907ab5a5831ea28ac74e3d61754b4cadeb9eaf0cab",
+    "Makefile": "eb3d22f8b781177cf96e400be11cfee3d806391b2a9904a8a1b36ba95989cd6f"
+  },
+  "source_snapshot": "measured-source.zip",
+  "implementation_commit": "7ccf506"
+}

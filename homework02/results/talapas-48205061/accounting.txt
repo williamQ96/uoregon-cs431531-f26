@@ -1,0 +1,7 @@
+JobID           JobName      State ExitCode    Elapsed  AllocCPUS     ReqMem     MaxRSS        NodeList 
+------------ ---------- ---------- -------- ---------- ---------- ---------- ---------- --------------- 
+48205061     hw02-pref+  COMPLETED      0:0   00:00:18         32         4G                      n0187 
+48205061.ba+      batch  COMPLETED      0:0   00:00:18         32               183304K           n0187 
+48205061.ex+     extern  COMPLETED      0:0   00:00:18         32                                 n0187 
+48205061.0    benchmark  COMPLETED      0:0   00:00:00         32                 2500K           n0187 
+48205061.1    benchmark  COMPLETED      0:0   00:00:12         32               269164K           n0187 

@@ -1,0 +1,12 @@
+*.o
+/prefix
+/benchmark
+/build/
+/report/*.aux
+/report/*.log
+/report/*.out
+/report/*.fls
+/report/*.fdb_latexmk
+__pycache__/
+credentials.json
+!/results/**/metadata.json

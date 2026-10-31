@@ -1,0 +1,25 @@
+{
+  "platform": "Local WSL2 (Talapas measurements pending)",
+  "platform_short": "Local WSL2",
+  "cpu": "AMD Ryzen 9 9950X3D, 16 cores / 32 logical CPUs",
+  "compiler": "GCC 15.2.0",
+  "repeats": 7,
+  "threads": [
+    1,
+    2,
+    4,
+    8,
+    16,
+    32
+  ],
+  "talapas_verified": false,
+  "status_note": "After UO VPN connected, Talapas SSH was reachable and its saved host key verified, but password authentication was rejected. No cluster job was submitted; these are local WSL measurements.",
+  "sizes": [
+    65536,
+    1048576,
+    16777216
+  ],
+  "omp_places": "cores",
+  "omp_proc_bind": "close",
+  "dynamic_teams": false
+}
